@@ -1,1 +1,115 @@
 @import 'tailwindcss';
+
+:root {
+  --pink-600: #452f43;
+  --pink-500: #5d435c;
+  --pink-400: #a976a3;
+  --pink-300: #c7a0c2;
+  --pink-200: #e1cddf;
+
+  --gray-700: #1a1819;
+  --gray-900: #0d0c0d;
+}
+
+@theme inline {
+    --color-primary: var(--pink-600);
+    --color-secondary: var(--pink-500);
+    --color-tertiary: var(--pink-400);
+    --color-accent: var(--pink-300);
+
+    --text: white;
+}
+
+* {
+  @apply box-border;
+}
+
+body {
+  @apply m-0 p-0 font-sans;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Title Bar Styles */
+.title-bar {
+  @apply fixed top-0 left-0 right-0 h-12 z-50 bg-primary border-b-accent;
+  -webkit-app-region: drag;
+}
+
+.title-bar-content {
+  @apply h-full flex items-center justify-between pl-4 pr-0;
+}
+
+.title-bar-buttons {
+  @apply flex items-center gap-2;
+  -webkit-app-region: no-drag;
+}
+
+.logo-button {
+  @apply p-2 rounded-lg bg-transparent border-none cursor-pointer transition-all duration-200 flex items-center justify-center text-accent;
+  -webkit-app-region: no-drag;
+}
+
+.logo-button:hover {
+  @apply text-white bg-secondary;
+}
+
+.nav-button {
+  @apply p-2 text-tertiary rounded-md bg-transparent border-none cursor-pointer transition-all duration-200 flex items-center justify-center;
+  -webkit-app-region: no-drag;
+}
+
+.nav-button:hover:not(:disabled) {
+  @apply text-white bg-secondary;
+}
+
+.nav-button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.nav-button:disabled:hover {
+  @apply bg-transparent text-tertiary;
+}
+
+.title {
+  @apply text-white font-medium text-sm select-none flex-1 text-center mx-4;
+}
+
+.settings-button {
+  @apply p-2 rounded-md text-tertiary bg-transparent border-none cursor-pointer transition-all duration-200 flex items-center justify-center;
+  -webkit-app-region: no-drag;
+}
+
+.settings-button:hover {
+  @apply text-white bg-secondary;
+}
+
+/* Window Controls */
+.title-bar-right {
+  @apply flex items-center gap-0;
+  -webkit-app-region: no-drag;
+}
+
+.window-controls {
+  @apply flex items-center ml-2;
+}
+
+.window-control {
+  @apply w-12 h-12 text-tertiary border-none bg-transparent cursor-pointer flex items-center justify-center transition-all duration-200;
+  -webkit-app-region: no-drag;
+}
+
+.window-control:hover {
+  @apply text-white bg-secondary;
+}
+
+.close-button:hover {
+  @apply text-white bg-accent;
+}
+
+.minimize-button:hover {
+    @apply bg-secondary
+}
+
+.maximize-button:hover {
+    @apply bg-secondary;
+}

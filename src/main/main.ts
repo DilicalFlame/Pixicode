@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
@@ -12,6 +12,8 @@ const createWindow = (): void => {
     width: 1200,
     height: 800,
     icon: join(__dirname, 'assets/icon.png'),
+    titleBarStyle: 'hidden',
+    titleBarOverlay: false,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -33,8 +35,37 @@ const createWindow = (): void => {
   }
 };
 
+// IPC handlers for window controls
+ipcMain.handle('window-minimize', () => {
+  if (mainWindow) {
+    mainWindow.minimize();
+  }
+});
+
+ipcMain.handle('window-maximize', () => {
+  if (mainWindow) {
+    if (mainWindow.isMaximized()) {
+      mainWindow.unmaximize();
+    } else {
+      mainWindow.maximize();
+    }
+  }
+});
+
+ipcMain.handle('window-close', () => {
+  if (mainWindow) {
+    mainWindow.close();
+  }
+});
+
+ipcMain.handle('window-is-maximized', () => {
+  return mainWindow ? mainWindow.isMaximized() : false;
+});
+
 // Create application window
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  createWindow();
+});
 
 // Quit when all windows are closed, except on macOS
 app.on('window-all-closed', () => {

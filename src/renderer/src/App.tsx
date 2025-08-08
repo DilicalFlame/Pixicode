@@ -1,7 +1,8 @@
 import React from 'react';
+import TitleBar from './components/TitleBar';
 
 const App: React.FC = () => {
-  return <div>Hello World</div>;
+  return <TitleBar />;
 };
 
 export default App;
