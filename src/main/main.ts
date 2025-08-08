@@ -1,6 +1,7 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { getWinBounds, saveBounds } from './utility_functions.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -8,9 +9,12 @@ const __dirname = dirname(__filename);
 let mainWindow: BrowserWindow;
 
 const createWindow = (): void => {
+  const { width, height } = getWinBounds();
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: width,
+    height: height,
+    minWidth: 800,
+    minHeight: 600,
     icon: join(__dirname, 'assets/icon.png'),
     titleBarStyle: 'hidden',
     titleBarOverlay: false,
@@ -21,6 +25,14 @@ const createWindow = (): void => {
       preload: join(__dirname, '../preload/preload.js'),
     },
   });
+
+  mainWindow.on('resized', () => {
+    const { width, height } = mainWindow.getBounds();
+    // Save the new window bounds
+    saveBounds({ width, height });
+    console.log(`Window resized to ${width}x${height}`);
+  });
+
   try {
     if (process.env.NODE_ENV === 'development') {
       // Development mode: load from Vite dev server
