@@ -29,7 +29,7 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
           height="497.17"
           rx="85.5132"
           stroke="#4C364A"
-          stroke-width="29.8302"
+          strokeWidth="29.8302"
         />
       </g>
       <g filter="url(#filter1_n_21_138)">
@@ -48,7 +48,7 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
           height="426.816"
           rx="213.408"
           stroke="#4C364A"
-          stroke-width="25.6089"
+          strokeWidth="25.6089"
         />
       </g>
       <mask
@@ -100,7 +100,7 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
         height="37.6442"
         fill="#ED87E2"
         stroke="#4C364A"
-        stroke-width="0.853631"
+        strokeWidth="0.853631"
       />
       <rect
         x="106.961"
@@ -109,7 +109,7 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
         height="37.6442"
         fill="#E277D8"
         stroke="#4C364A"
-        stroke-width="0.853631"
+        strokeWidth="0.853631"
       />
       <mask
         id="path-11-outside-3_21_138"
@@ -140,9 +140,9 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
           width="527"
           height="527"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -174,7 +174,7 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
             in="coloredNoise1"
             result="noise1Clipped"
           />
-          <feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+          <feFlood floodColor="rgba(0, 0, 0, 0.25)" result="color1Flood" />
           <feComposite
             operator="in"
             in2="noise1Clipped"
@@ -193,9 +193,9 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
           width="452.425"
           height="452.425"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -227,7 +227,7 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
             in="coloredNoise1"
             result="noise1Clipped"
           />
-          <feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+          <feFlood floodColor="rgba(0, 0, 0, 0.25)" result="color1Flood" />
           <feComposite
             operator="in"
             in2="noise1Clipped"
@@ -247,8 +247,8 @@ const PixicodeIcon: React.FC<PixicodeIconProps> = ({
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(263.003 263.003) rotate(48.5878) scale(2023.16)"
         >
-          <stop stop-color="#E3D2E1" />
-          <stop offset="1" stop-color="#DC5BCF" />
+          <stop stopColor="#E3D2E1" />
+          <stop offset="1" stopColor="#DC5BCF" />
         </radialGradient>
       </defs>
     </svg>

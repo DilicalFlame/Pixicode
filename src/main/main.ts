@@ -37,6 +37,7 @@ const createWindow = (): void => {
     if (process.env.NODE_ENV === 'development') {
       // Development mode: load from Vite dev server
       mainWindow.loadURL('http://localhost:3000');
+      // mainWindow.webContents.openDevTools();
     } else {
       // Production mode: load from built files
       mainWindow.loadFile(join(__dirname, '../renderer/index.html'));
