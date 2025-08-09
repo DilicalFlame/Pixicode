@@ -8,7 +8,11 @@ import MaximizeIcon from './assets/MaximizeIcon';
 import RestoreIcon from './assets/RestoreIcon';
 import CloseIcon from './assets/CloseIcon';
 
-const TitleBar = () => {
+interface TitleBarProps {
+  onSettingsClick: () => void;
+}
+
+const TitleBar: React.FC<TitleBarProps> = ({ onSettingsClick }) => {
   const [isMaximized, setIsMaximized] = useState(false);
 
   useEffect(() => {
@@ -22,7 +26,7 @@ const TitleBar = () => {
       }
     };
 
-    checkMaximizedState();
+    checkMaximizedState().then((_) => {});
   }, []);
 
   const handleMinimize = async () => {
@@ -67,7 +71,7 @@ const TitleBar = () => {
         </div>
         <span className="title">Pixicode</span>
         <div className="title-bar-right">
-          <button className="settings-button">
+          <button className="settings-button" onClick={onSettingsClick}>
             <SettingsIcon />
           </button>
           <div className="window-controls">

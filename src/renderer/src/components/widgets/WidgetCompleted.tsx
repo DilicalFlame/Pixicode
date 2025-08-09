@@ -6,7 +6,7 @@ const WidgetCompleted: React.FC = () => {
     <div className="widget completed-widget">
       <div className="action-button">
         <PartyIcon />
-        <span className="action-text">Completed: 39</span>
+        <span className="action-text">Completed: 29</span>
       </div>
     </div>
   );

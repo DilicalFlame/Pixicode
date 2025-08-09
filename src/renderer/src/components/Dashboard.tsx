@@ -22,12 +22,13 @@ const Dashboard: React.FC = () => {
         </div>
       </div>
 
+      {/* Left Column */}
       <div className="dashboard-content">
-        {/* Top row with widgets */}
         <div className="dashboard-column left-column">
           <WidgetTotalPixies />
         </div>
 
+        {/* Middle Column */}
         <div className="dashboard-column middle-column">
           <WidgetCompleted />
           <WidgetActions />
