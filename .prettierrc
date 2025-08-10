@@ -11,11 +11,17 @@
       "files": "*.{css,html}",
       "options": {
         "tabWidth": 4,
-        "useTabs": false,
         "singleQuote": false,
-        "printWidth": 80,
         "trailingComma": "none"
       }
+    },
+    {
+        "files": "*.{ts,js}",
+        "options": {
+            "tabWidth": 4,
+            "singleQuote": true,
+            "trailingComma": "none"
+        }
     }
   ]
 }

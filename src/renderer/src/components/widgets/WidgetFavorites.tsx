@@ -8,7 +8,7 @@ const WidgetFavorites: React.FC = () => {
       <h2 className="widget-title">Favorites</h2>
       <div className="favorites-container">
         <div className="favorites-image">
-          <img src="" alt="Favorite pixie" />
+          <img src={undefined} alt="Favorite pixie" />
         </div>
         <div className="favorites-navigation">
           <button className="nav-button favorites-prev">

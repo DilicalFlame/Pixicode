@@ -393,7 +393,11 @@ body {
 }
 
 .settings-modal-header {
-    @apply mb-4;
+    @apply mb-4 flex items-center justify-between;
+}
+
+.settings-modal-header h2 {
+    @apply font-pixelsans m-0 text-5xl text-white;
 }
 
 .settings-close-button {
@@ -405,6 +409,207 @@ body {
     @apply bg-secondary text-white;
 }
 
-.settings-modal-content {
+/* Settings Layout */
+.settings-layout {
+    @apply flex h-full gap-6;
+}
+
+.settings-sidebar {
+    @apply border-accent/30 w-1/4 min-w-[200px] border-r pr-4;
+}
+
+.settings-sidebar nav ul {
+    @apply m-0 list-none p-0;
+}
+
+.settings-sidebar nav ul li {
+    @apply font-pixelsans text-tertiary mb-2 cursor-pointer rounded-md px-3 py-3 text-xl transition-all;
+}
+
+.settings-sidebar nav ul li:hover {
+    @apply bg-secondary/50 text-white;
+}
+
+.settings-sidebar nav ul li.active {
+    @apply bg-secondary text-white;
+}
+
+.settings-content {
+    @apply flex-1 overflow-y-auto;
+}
+
+/* Settings Section Styles */
+.settings-section {
     @apply text-white;
+}
+
+.settings-section-title {
+    @apply font-pixelsans mb-6 text-4xl;
+}
+
+.settings-section-content {
+    @apply space-y-6;
+}
+
+/* Vault Settings Styles */
+.vault-header {
+    @apply mb-6;
+}
+
+.vault-header h4 {
+    @apply font-pixelsans mb-2 text-3xl;
+}
+
+.vault-description {
+    @apply text-tertiary text-lg;
+}
+
+.vault-list {
+    @apply mb-6 space-y-4;
+}
+
+.vault-item {
+    @apply bg-secondary/30 border-accent/30 flex items-center justify-between rounded-md border p-4;
+    transition: all 0.2s ease;
+}
+
+.vault-item:hover {
+    @apply bg-secondary/50;
+}
+
+.vault-item.active-vault {
+    @apply bg-secondary border-accent;
+}
+
+.vault-info {
+    @apply mr-4 flex-1;
+}
+
+.vault-name {
+    @apply font-pixelsans mb-2 text-xl;
+}
+
+.vault-path {
+    @apply w-full;
+}
+
+.vault-location-input {
+    @apply bg-primary/80 border-accent/30 text-tertiary w-full rounded-md border px-3 py-2;
+}
+
+.vault-actions {
+    @apply flex items-center space-x-2;
+}
+
+.vault-button {
+    @apply bg-tertiary/70 hover:bg-tertiary rounded-md px-3 py-2 text-white transition-all;
+    min-width: 80px;
+}
+
+.vault-button:disabled {
+    @apply bg-tertiary cursor-default text-white opacity-90;
+}
+
+.open-button {
+    @apply font-pixelsans;
+}
+
+.remove-button {
+    @apply flex items-center justify-center;
+    width: 36px;
+    min-width: 36px;
+}
+
+.remove-button:hover:not(:disabled) {
+    @apply bg-accent;
+}
+
+.add-vault-button {
+    @apply font-pixelsans w-full py-3 text-xl;
+}
+
+.vault-add-section {
+    @apply mt-6;
+}
+
+/* Confirmation Dialog */
+.confirmation-dialog {
+    @apply fixed inset-0 z-[60] flex items-center justify-center bg-gray-900/70 backdrop-blur-sm;
+}
+
+.confirmation-content {
+    @apply bg-primary border-accent/30 w-full max-w-md rounded-lg border p-6 shadow-lg;
+}
+
+.confirmation-content h4 {
+    @apply font-pixelsans mb-4 text-3xl;
+}
+
+.confirmation-content p {
+    @apply mb-6;
+}
+
+.confirmation-buttons {
+    @apply flex justify-end space-x-4;
+}
+
+.cancel-button {
+    @apply bg-secondary hover:bg-secondary/80;
+}
+
+.confirm-button {
+    @apply bg-accent hover:bg-accent/80;
+}
+
+/* About Pixicode Component Styles */
+.about-section {
+    @apply mx-auto max-w-2xl p-6;
+}
+
+.about-header {
+    @apply mb-8 flex items-center gap-6 transition-all duration-700;
+}
+
+.about-pre-animate {
+    @apply translate-y-4 opacity-0;
+}
+
+.about-animate {
+    @apply translate-y-0 opacity-100;
+}
+
+.about-animate-delayed {
+    @apply translate-y-0 opacity-100 transition-all delay-300 duration-700;
+}
+
+.about-logo {
+    @apply bg-tertiary/10 p-4 transition-transform duration-300 hover:scale-105;
+}
+
+.about-logo-container svg {
+    @apply h-24 w-24;
+}
+
+.about-info {
+    @apply text-white;
+}
+
+.about-title {
+    @apply mb-2 text-4xl font-bold text-white;
+}
+
+.about-version {
+    @apply border-accent/30 bg-primary/5 inline-block rounded-full border px-3 py-1 font-mono font-semibold text-white;
+}
+
+.about-description {
+    @apply border-accent/20 bg-primary/5 rounded-xl border p-6 text-white shadow-sm;
+}
+
+.about-text {
+    @apply mb-4 font-mono text-xl leading-relaxed text-white;
+}
+
+.about-footer {
+    @apply border-accent/20 mt-6 flex justify-between border-t pt-4 font-mono text-sm text-white;
 }
